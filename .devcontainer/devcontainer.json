@@ -1,0 +1,18 @@
+{
+    "name": "Minikube Codespace",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "runArgs": ["--privileged"],
+    "postCreateCommand": "/bin/bash /workspace/.devcontainer/start-minikube.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "ms-kubernetes-tools.vscode-kubernetes-tools"
+            ]
+        }
+    }
+}
