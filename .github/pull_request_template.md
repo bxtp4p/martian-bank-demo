@@ -1,4 +1,9 @@
-## Pull Request Template
+## Overview
+<!-- Describe the problem you're solving, and the solution you're proposing. -->
+
+## Copilot Time Savings Survey
+
+<!-- Please take a moment to fill out this survey. It will help us understand how Copilot is helping you and your team. -->
 
 ### 1. Did you use Copilot for this PR?
 - [ ] Yes
