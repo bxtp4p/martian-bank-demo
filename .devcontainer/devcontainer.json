@@ -4,7 +4,7 @@
         "dockerfile": "Dockerfile"
     },
     "runArgs": ["--privileged"],
-    "postCreateCommand": "/bin/bash ./.devcontainer/start-minikube.sh",
+    "postCreateCommand": "/bin/bash ./.devcontainer/start-minikube.sh && rm -rf /workspaces/.codespaces/shared/editors/jetbrains",
     "customizations": {
         "vscode": {
             "settings": {

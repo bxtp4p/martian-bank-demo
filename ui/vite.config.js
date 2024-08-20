@@ -7,28 +7,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
+const codespaceName = process.env.CODESPACE_NAME;
+const baseUrl = codespaceName ? `https://${codespaceName}-3000.githubpreview.dev` : 'http://localhost:3000';
+
 export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    // proxy: {
-    //   '/auth': {
-    //     target: 'http://host.docker.internal:8000',
-    //     changeOrigin: true,
-    //   },
-    //   '/atm': {
-    //     target: 'http://host.docker.internal:8001',
-    //     changeOrigin: true,
-    //   },
-    // },
     proxy: {
       '/auth': {
-        target: 'http://localhost:8000',
+        target: codespaceName ? `https://${codespaceName}-8000.githubpreview.dev` : 'http://localhost:8000',
         changeOrigin: true,
       },
       '/atm': {
-        target: 'http://localhost:8001',
+        target: codespaceName ? `https://${codespaceName}-8001.githubpreview.dev` : 'http://localhost:8001',
         changeOrigin: true,
       },
     },
